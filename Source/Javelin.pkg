@@ -1,0 +1,165 @@
+$#include "stdafx.h"
+$#include "MainThread.h"
+$#include "LuaStatement.h"
+$#include "Actor.h"
+$#include "Texture.h"
+$#include "Sprite.h"
+$#include "DxFont.h"
+$#include "BGMusic.h"
+$#include "Input.h"
+$#include "Figure.h"
+
+class MainThread
+{
+public:
+	static Input* GetInput() { return pInput; }
+	static LuaStatement* GetLs() { return Ls; }
+	
+	static void AddScene(string scene_name);
+	static void ChangeScene(string next_scene);
+
+	static void AddActor(Actor* actor);
+	static void DeleteActor(string actor_name);
+	static void DeleteActorAll();
+};
+
+class Actor
+{
+public:
+	Actor(Texture* tex, float x, float y, string actor_name, bool drawflg=false);
+
+	float GetX();
+	float GetY();
+	void SetX(float value);
+	void SetY(float value);
+};
+
+class LuaStatement
+{
+public:
+	bool DoLuaFile(const char* path);
+};
+
+class Texture
+{
+public:  
+    Texture();  
+    Texture(const char* filename);  
+    ~Texture();  
+  
+    // 画像ファイルからテクスチャを作成する  
+    BOOL Load(const char* filename);  
+  
+    // テクスチャサイズの取得  
+    void GetTextureSize(int *width, int *height);  
+
+	// 画像サイズの取得  
+    void GetGraphicSize(int *width, int *height);  
+  
+    // テクスチャデータを直接取得する  
+    const LPDIRECT3DTEXTURE9 GetTexture(){ return texture; }
+};
+
+#define CP_MIDDLECENTER 0  
+#define CP_LEFT 1  
+#define CP_CENTER 2  
+#define CP_RIGHT 4  
+#define CP_TOP 8  
+#define CP_MIDDLE 16  
+#define CP_BOTTOM 32
+
+#define ALPHA_BLEND	0
+#define ADD_BLEND	1
+#define SUB_BLEND	2
+#define MULA_BLEND	3
+#define INVS_BLEND	4
+
+class Sprite
+{
+public:  
+    Sprite();  
+    Sprite(Texture *source);  
+      
+    void SetTexture(Texture *source);
+
+    void SetCenterPosition(unsigned char pos);  
+    BYTE GetCenterPosition();
+
+	void GetSpriteSize(int *width, int *height);
+	void SetSpriteSize(int width, int height);
+
+	// フレーム単位ではなく特定の範囲のグラフィックを転送したときには
+	// SetSpriteRect()で直接範囲を指定できるようにする
+	void SetSpriteRect(int left, int top, int right, int bottom);
+    
+	void SetFrame(int frame);
+
+    // 完全不透明の値をアルファ値のデフォルト引数として追加  
+	void Draw(float x, float y, int alpha = 255);
+	void DrawRot(float x, float y, float r, int alpha = 255);
+	void DrawExt(float x, float y, float ex, float ey, int alpha = 255);
+	void DrawExtRot(float x, float y, float ex, float ey, float r, int alpha = 255);
+
+	void SetBlendMode(int mode);
+};
+
+class DxFont
+{
+public:
+	DxFont();
+	DxFont(int fontsize);
+	~DxFont();
+
+	void Draw(const char* text, int x, int y);
+};
+
+class Figure
+{
+public:
+	Figure(void);
+	~Figure(void);
+
+	void DrawLine(int x1, int y1, int x2, int y2, unsigned long color);
+	void DrawBox(int x, int y, int width, int height, unsigned long color);
+	void DrawFillBox(int x, int y, int width, int height, unsigned long color);
+};
+
+#define DIK_UP              0xC8
+#define DIK_LEFT            0xCB
+#define DIK_DOWN            0xD0
+#define DIK_RIGHT           0xCD
+#define DIK_F2              0x3C
+
+#define PP_UP				0x1  
+#define PP_RIGHT			0x2  
+#define PP_DOWN				0x4  
+#define PP_LEFT				0x8  
+
+class Input
+{
+public:  
+    bool IsKeyDown(int key);
+    bool IsKeyPressed(int key);  
+    bool IsKeyReleased(int key);
+
+    unsigned char GetPovPosition();          // 十字キーの位置を取得  
+    bool IsButtonDown(int pos);     // ボタンが押され続けているか  
+    bool IsButtonPressed(int pos);  // ボタンが押された瞬間か  
+    bool IsButtonReleased(int pos); // ボタンが放された瞬間か  
+};
+
+class BGMusic
+{
+public:
+	BGMusic(void);
+	BGMusic(const char* filename);  
+	~BGMusic(void);
+
+    void Load(const char* filename);  
+    void Play(bool loop=false);  
+    void Stop();
+
+	void SetVolume(long volume);
+	void Fade(unsigned long endtime, long volume);
+	void Update();
+};

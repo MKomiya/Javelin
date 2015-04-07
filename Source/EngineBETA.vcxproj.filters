@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\DirectX">
+      <UniqueIdentifier>{78a44125-e293-41bf-8f9f-4bc26f85e7cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\DirectX">
+      <UniqueIdentifier>{2ade2cdf-2089-4256-92cf-0d2351f98200}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tolua_src">
+      <UniqueIdentifier>{1e46faf2-de31-4d5e-bac2-9c38556d2741}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuaScript">
+      <UniqueIdentifier>{8acc8e0b-be9d-4e00-bbe6-2a050c18269b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\System">
+      <UniqueIdentifier>{2e5b2a1f-2492-4451-aef4-d1bd5b76e4a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\System">
+      <UniqueIdentifier>{1870bbb6-4159-4c60-ab3e-fc8220c090f3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WinMain.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>ソース ファイル\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>ソース ファイル\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>ソース ファイル\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="MainThread.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="tolua_src\tolua_event.c">
+      <Filter>tolua_src</Filter>
+    </ClCompile>
+    <ClCompile Include="tolua_src\tolua_is.c">
+      <Filter>tolua_src</Filter>
+    </ClCompile>
+    <ClCompile Include="tolua_src\tolua_map.c">
+      <Filter>tolua_src</Filter>
+    </ClCompile>
+    <ClCompile Include="tolua_src\tolua_push.c">
+      <Filter>tolua_src</Filter>
+    </ClCompile>
+    <ClCompile Include="tolua_src\tolua_to.c">
+      <Filter>tolua_src</Filter>
+    </ClCompile>
+    <ClCompile Include="DxFont.cpp">
+      <Filter>ソース ファイル\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="BGMusic.cpp">
+      <Filter>ソース ファイル\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="Figure.cpp">
+      <Filter>ソース ファイル\DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="Javelin_glue.cpp">
+      <Filter>tolua_src</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaStatement.cpp">
+      <Filter>ソース ファイル\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>ソース ファイル\System</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaScene.cpp">
+      <Filter>ソース ファイル\System</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Input.h">
+      <Filter>ヘッダー ファイル\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>ヘッダー ファイル\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>ヘッダー ファイル\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugPut.h">
+      <Filter>ヘッダー ファイル\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="MainThread.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="tolua_src\tolua_event.h">
+      <Filter>tolua_src</Filter>
+    </ClInclude>
+    <ClInclude Include="DxFont.h">
+      <Filter>ヘッダー ファイル\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="BGMusic.h">
+      <Filter>ヘッダー ファイル\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="Figure.h">
+      <Filter>ヘッダー ファイル\DirectX</Filter>
+    </ClInclude>
+    <ClInclude Include="Javelin_glue.h">
+      <Filter>tolua_src</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaStatement.h">
+      <Filter>ヘッダー ファイル\System</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaScene.h">
+      <Filter>ヘッダー ファイル\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>ヘッダー ファイル\System</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LuaScript\reload.lua">
+      <Filter>LuaScript</Filter>
+    </None>
+    <None Include="LuaScript\boot.lua">
+      <Filter>LuaScript</Filter>
+    </None>
+    <None Include="LuaScript\testScene.lua">
+      <Filter>LuaScript</Filter>
+    </None>
+    <None Include="LuaScript\testActor.lua">
+      <Filter>LuaScript</Filter>
+    </None>
+    <None Include="LuaScript\act2.lua">
+      <Filter>LuaScript</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Javelin.pkg" />
+  </ItemGroup>
+</Project>
